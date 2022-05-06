@@ -16,7 +16,7 @@ timelist.addEventListener('click', event =>
 {
     if (event.target.classList.contains('time-btn')) {
       time = parseInt(event.target.getAttribute('data-time'))
-      
+
       screens[1].classList.add('up')
       startGame()
 
@@ -39,7 +39,7 @@ function startGame(){
     setInterval(decreaseTime, 1000)
     createRandomCircle()
     setTime(time)
-    
+
 }
 
 
@@ -52,7 +52,7 @@ function decreaseTime() {
         current = `0${current}`
     }
     setTime(current)
-    } 
+    }
 }
 
 function setTime(value){
@@ -61,8 +61,10 @@ function setTime(value){
 
 function finishGame(){
     timeEl.parentNode.classList.add('hide')
-    board.innerHTML = `<h1>Ваш счёт: <span class="primary">${score}</span></h1>`
-    
+    board.innerHTML = `<h1><input>Твой счёт: <span class="primary">${score}</span></h1>`
+
+
+
 
 }
 
@@ -72,9 +74,9 @@ function createRandomCircle() {
     const {width, height} = board.getBoundingClientRect()
     const x = getRandomNumber(0, width - size)
     const y = getRandomNumber(0, height - size)
-    
 
-    
+
+
 
     circle.classList.add('circle')
     circle.style.width = `${size}px`
@@ -96,5 +98,5 @@ function getRandomColor() {
 function setColor(circle) {
     const color = getRandomColor()
     circle.style.background = color
-    
+
 }
