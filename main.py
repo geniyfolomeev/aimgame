@@ -3,6 +3,8 @@ from flask import Flask, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import requests
 
+# for test
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
